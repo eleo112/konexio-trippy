@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+
+`;
 
 class Card extends React.Component {
 
@@ -19,11 +24,21 @@ class Card extends React.Component {
             source
         } = this.state;
         return (
-            <div>
-                <p>{name}</p>
-                <p>{slug}</p>
-                <img src={source}/>
-            </div>
+            <Container
+                className='col-md-3 col-6'>
+                    <Link>
+                        <div>
+                            <img src={source} />
+                            <p>{name}</p>
+                        </div>
+                    </Link>
+
+            </Container>
+            // <div>
+            //     <p>{name}</p>
+            //     <p>{slug}</p>
+            //     <img src={source}/>
+            // </div>
         );
     }
 }

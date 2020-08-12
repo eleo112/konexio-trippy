@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../core/Card';
+// import Congif from '../Config';
 
 class Home extends React.Component {
 
@@ -17,10 +18,23 @@ class Home extends React.Component {
             <Card />
         }
 
+        const {
+            name,
+            slug,
+            source
+        } = this.props;
+
         return (
-        <p>{name}: {this.props.cities[0].name}</p>
-        <p>{slug}: {this.props.cities[0].slug}</p>
-        <p>{source}: {this.props.cities[0].source}</p>
+            <div>
+                {this.state.cities.map((city) => {
+                    return (
+                        <div>
+                            <img src={'http://localhost:3001' + city.source}/>
+                            <p>{city.name}</p>
+                        </div>
+                    )
+                })}
+            </div>
         
         );
     }
