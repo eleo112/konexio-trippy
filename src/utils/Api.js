@@ -3,10 +3,13 @@ import Config from '../Config';
 class Api {
     getHome() {
         const url = `${Config.host}/api/home`;
-        return fetch(url)
+        return fetch(url, {
+            method: 'GET'
+        })
         .then(res => res.json())
-        .then(res => {
-            return res.results
+        .then(json => {
+            console.log('json', json);
+            return json.results
         });
     }
 }

@@ -13,13 +13,14 @@ class HomeContainer extends React.Component {
     
     componentDidMount() {
         Api.getHome()
+        // console.log('getHome', getHome);
             .then((cities) => {
                 this.setState({
                     cities
                 })
             });
     }
-    
+
 
 
     render() {
