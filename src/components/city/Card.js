@@ -28,9 +28,10 @@ class Card extends React.Component {
                 className='col-md-3 col-6'>
                     <Link>
                         <div>
-                            <p>name:{name}</p>
+                            <p>name: {name}</p>
                             <img src={source} />
-                            {/* <a href="/hotels/?city=<city>"></a> */}
+                            <a href="/hotels/?city=<city>"></a>
+                            <p>slug:{slug}</p>
                         </div>
                     </Link>
 

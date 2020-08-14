@@ -1,16 +1,20 @@
 import Config from '../Config';
 
 class Api {
-    getHome() {
+
+    // constructor(props) {
+    //     super(props);
+
+    //     this.getHome = this.getHome.bind(this);
+    // }
+    getHome = () => {
         const url = `${Config.host}/api/home`;
-        return fetch(url, {
-            method: 'GET'
-        })
-        .then(res => res.json())
-        .then(json => {
-            console.log('json', json);
-            return json.results
-        });
+         fetch(url)
+            .then(res => res.json())
+            .then(json => {
+                console.log('json', json);
+                return json
+            });
     }
 }
 
