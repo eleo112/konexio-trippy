@@ -1,6 +1,6 @@
 import React from 'react';
 // import Api from '../utils/Api';
-// import Home from '../components/core/Home';
+import Home from '../components/core/Home';
 import Config from '../Config';
 
 class HomeContainer extends React.Component {
@@ -42,6 +42,7 @@ class HomeContainer extends React.Component {
                         </p>
                     );
                 })}
+                <Home />
             </div>
             // <div className="container-fluid"
             //     style={{

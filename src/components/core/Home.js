@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../core/Card';
-// import Congif from '../Config';
+import Card from '../../components/city/Card';
+import Congif from '../../Config';
 
 class Home extends React.Component {
 
@@ -31,7 +31,7 @@ class Home extends React.Component {
                 {this.state.cities.map((city) => {
                     return (
                         <div>
-                            <img src={'http://localhost:3001' + city.source}/>
+                            <img src={`${Congif.host}` + city.source}/>
                             <p>{city.name}</p>
                         </div>
                     )

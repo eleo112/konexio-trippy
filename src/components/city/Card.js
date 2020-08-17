@@ -26,14 +26,14 @@ class Card extends React.Component {
         return (
             <Container
                 className='col-md-3 col-6'>
-                    <Link>
+                    {/* {/* <Link> */}
                         <div>
                             <p>name: {name}</p>
                             <img src={source} />
                             <a href="/hotels/?city=<city>"></a>
-                            <p>slug:{slug}</p>
+                            <p>slug: {slug}</p>
                         </div>
-                    </Link>
+                    {/* </Link>  */}
 
             </Container>
         );
