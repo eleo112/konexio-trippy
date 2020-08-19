@@ -21,3 +21,5 @@ const Global = {
         header: 700
     }
 };
+
+export default Global;

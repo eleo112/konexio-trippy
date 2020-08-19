@@ -6,7 +6,7 @@ const Container = styled.div`
 
 `;
 
-class Card extends React.Component {
+class LargeCard extends React.Component {
 
     constructor(props) {
         super(props);
@@ -14,50 +14,42 @@ class Card extends React.Component {
         this.state = {
             name: '',
             source: 'http://via.placeholder.com/300x200',
-            slug: '',
+            slug: ''
         }
     }
 
-    componentDidMount() {
-        const url = 'http://localhost:3000/hotels?city=<city>';
-        fetch(url)
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    name: json.name,
-                    source: json.source,
-                    slug: json.slug
-                })
-            })
-
-    }
 
     render() {
+        
+    const {
+        name,
+        slug,
+        source
+    } = this.state;
 
-        const {
-            name,
-            slug,
-            source
-        } = this.state;
+        console.log("render#LArgeCard", LargeCard);
 
         if (slug === Link.city) {
-            console.log("render Card");
+            console.log('render#if#LargeCard');
             return (
                 <Container
-                    className='col-md-3 col-6'>
+                    className='col-md-6 col-12'>
                         <Link>
                             <div>
                                 <p>name: {name}</p>
                                 <img src={source} alt={source}/>
+                                {/* <a href={`/hotels/?city=${slug}`}>.</a> */}
                             </div>
                         </Link>
                 </Container>
             );
         }
         return(
-            <div></div>
+            <div></div>    
         );
+
+        
     }
 }
 
-export default Card;
+export default LargeCard;

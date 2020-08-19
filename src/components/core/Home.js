@@ -14,25 +14,31 @@ class Home extends React.Component {
 
     render() {
 
-        if (this.props.cities.length > 0) {
-           return (
-            <Card />
-           ); 
-        }
-
         const {
             name,
             slug,
-            source
+            source,
+            cities
         } = this.props;
+
+        if (cities.length > 0) {
+           return (
+            <Card >
+                {name} = {cities[0].name}
+                {slug} = {cities[0].slug}
+                {source} = {cities[0].source}
+            </Card>
+           );
+        }
 
         return (
             <div>
                 {this.state.cities.map((city) => {
                     return (
                         <div>
-                            <img src={`${Congif.host}` + city.source}/>
-                            <p>{city.name}</p>
+                            <img src={`${Congif.host}` + city.source} alt={source}/>
+                            <p>{name}: {city.name}</p>
+                            <p>{slug}</p>
                         </div>
                     )
                 })}
