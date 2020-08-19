@@ -29,7 +29,7 @@ class Card extends React.Component {
                     {/* {/* <Link> */}
                         <div>
                             <p>name: {name}</p>
-                            <img src={source} />
+                            <img src={this.state.source} />
                             <a href="/hotels/?city=<city>"></a>
                             <p>slug: {slug}</p>
                         </div>
